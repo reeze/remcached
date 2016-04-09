@@ -1,10 +1,13 @@
 [package]
-name = "remecache"
+name = "remcached"
 version = "0.1.0"
 authors = ["Reeze Xia <reeze.xia@gmail.com>"]
 
 [dependencies]
 mio = "0.5"
+bytes = "0.3.0"
+log = "*"
+env_logger = "*"
 
 [dependencies.memcached]
 path = "libmemcached"
