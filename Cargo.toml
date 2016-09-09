@@ -3,12 +3,15 @@ name = "remcached"
 version = "0.1.0"
 authors = ["Reeze Xia <reeze.xia@gmail.com>"]
 
+
 [dependencies]
-futures = { git = "https://github.com/alexcrichton/futures-rs" }
-tokio-core = { git = "https://github.com/tokio-rs/tokio-core" }
-bytes = "0.3.0"
-log = "*"
 env_logger = "*"
+log = "*"
+chrono = "^0.2.21"
+
+[lib]
+name = "remcached"
 
 [dependencies.memcached]
 path = "libmemcached"
+

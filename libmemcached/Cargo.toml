@@ -5,4 +5,10 @@ version = "0.0.0"
 
 [lib]
 name = "memcached"
-path = "lib.rs"
+
+[dependencies]
+futures = { git = "https://github.com/alexcrichton/futures-rs" }
+tokio-core = { git = "https://github.com/tokio-rs/tokio-core" }
+bytes = "0.3.0"
+log = "*"
+
