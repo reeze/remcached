@@ -8,6 +8,7 @@ authors = ["Reeze Xia <reeze.xia@gmail.com>"]
 env_logger = "*"
 log = "*"
 chrono = "^0.2.21"
+clap = "2.11.3"
 
 [lib]
 name = "remcached"
