@@ -18,6 +18,7 @@ pub enum Error {
 
 pub type Result<T> = result::Result<T, Error>;
 
+#[derive(Debug, Clone)]
 struct MemStore {
 
 }
@@ -38,8 +39,9 @@ impl Engine for MemStore {
     }
 }
 
+#[derive(Debug, Clone)]
 pub struct Storage {
-    engine: Box<Engine>,
+    engine: Box<MemStore>,
 }
 
 impl Storage {

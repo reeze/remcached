@@ -27,7 +27,7 @@ fn main()
 
     println!("Listening on: {}", addr); 
 
-    let server = memcached::Server::new(&addr);
+    let server = memcached::Server::new(addr);
 
     if let Err(err) = server.serve() {
         println!("Failed to start server: {}", err);

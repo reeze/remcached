@@ -8,5 +8,7 @@ pub mod server;
 pub mod storage;
 pub mod protocol;
 
+mod util;
+
 pub use storage::{Key, Value};
 pub use server::Server;
