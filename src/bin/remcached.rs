@@ -2,7 +2,6 @@
 extern crate log;
 
 extern crate remcached;
-extern crate memcached;
 
 use std::env;
 use std::process::exit;
@@ -27,7 +26,7 @@ fn main()
 
     println!("Listening on: {}", addr); 
 
-    let server = memcached::Server::new(addr);
+    let server = remcached::Server::new(addr);
 
     if let Err(err) = server.serve() {
         println!("Failed to start server: {}", err);

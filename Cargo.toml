@@ -9,10 +9,13 @@ env_logger = "*"
 log = "*"
 chrono = "^0.2.21"
 clap = "2.11.3"
+futures = "0.1.2"
+tokio-core = "0.1.0"
+bytes = "0.3.0"
 
 [lib]
 name = "remcached"
 
-[dependencies.memcached]
-path = "libmemcached"
+[[bin]]
+name = "remcached"
 

@@ -14,7 +14,7 @@ use tokio_core::io::{read_to_end, copy, write_all};
 use tokio_core::reactor::Core;
 use tokio_core::net::TcpListener;
 
-use storage::Storage;
+use storage::{Engine, MemStore, Type};
 
 use protocol::request::Request;
 
@@ -25,12 +25,15 @@ use util::escape;
 #[derive(Debug, Clone)]
 pub struct Server{
     addr: SocketAddr,
-    storage: Storage,
+    storage: Rc<RefCell<Engine>>,
 }
 
 impl Server {
     pub fn new(addr: SocketAddr) -> Self {
-        Server{addr: addr, storage: Storage::new()}
+        Server{
+            addr: addr,
+            storage: Rc::new(RefCell::new(MemStore::new()))
+        }
     }
 
     pub fn serve(&self) -> io::Result<()> {
